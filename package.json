@@ -1,0 +1,27 @@
+{
+  "name": "pepper-chat-weather",
+  "version": "0.0.8",
+  "description": "A Pepper Chat plug-in that enables weather functionality for a Pepper on the Pepper Chat platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pepper",
+    "robot",
+    "pepper chat",
+    "dialogflow",
+    "host",
+    "weather"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "ramda": "^0.26.1",
+    "request": "^2.88.0",
+    "restful.js": "^0.9.6",
+  },
+  "author": "Daniel Schofield",
+  "email": "daniel.schofield@softbankrobotics.com",
+  "license": "MIT"
+}
