@@ -64,6 +64,7 @@ class WeatherPepperChat {
             if (timeContext === 'present') {
                 const conditions = path(['data', 'current_condition', 0], response_body);
                 currentConditions = path(['weatherDesc', 0, 'value'], conditions);
+                console.log(Object.keys(conditions));
                 weatherCode = conditions.weatherCode; 
             } else {
                 const { startTime } = timePeriod;
