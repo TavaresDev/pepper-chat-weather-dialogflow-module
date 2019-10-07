@@ -19,7 +19,7 @@
     "moment": "^2.24.0",
     "ramda": "^0.26.1",
     "request": "^2.88.0",
-    "restful.js": "^0.9.6",
+    "restful.js": "^0.9.6"
   },
   "author": "Daniel Schofield",
   "email": "daniel.schofield@softbankrobotics.com",
