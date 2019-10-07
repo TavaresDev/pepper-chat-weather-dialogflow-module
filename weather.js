@@ -106,3 +106,4 @@ class WeatherPepperChat {
         });
     }
 }
+module.exports = { WeatherPepperChat };
