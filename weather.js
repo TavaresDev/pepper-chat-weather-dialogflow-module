@@ -55,7 +55,7 @@ class WeatherPepperChat {
                     timeContext = 'future';
                 }
             }
-            console.log(api_response)
+            console.log(JSON.stringify(api_response));
             const response_body = api_response.body(false);
             const forecast = path(['data', 'weather', 0], response_body);
             const location = path(['data', 'request', 0], response_body);
