@@ -15,7 +15,7 @@ const { requestBackend } = restful;
  * WEATHER MODULE:                                                                                                 *
  ******************************************************************************************************************/
 class WeatherPepperChat {
-    constructor(PepperChatLibrary, config) {
+    constructor(PepperChatLibrary, config) { 
         if (!('worldWeatherOnlineApiKey' in config)) { throw 'worldWeatherOnlineApiKey is required for the weather Pepper Chat weather module to function' }
         if (!('PepperResponse' in PepperChatLibrary)) { throw 'PepperResponse is required for the Pepper Chat weather module to function'}
         if (!('BasicCard' in PepperChatLibrary)) { throw 'BasicCard is required for the Pepper Chat weather module to function'}  
@@ -23,7 +23,7 @@ class WeatherPepperChat {
         this.PepperResponse = PepperChatLibrary.PepperResponse;
         this.BasicCard = PepperChatLibrary.BasicCard;
         this.randomlyChoose = PepperChatLibrary.randomlyChoose;        
-        this.worldWeatherOnlineApiKey = worldWeatherOnlineApiKey;
+        this.worldWeatherOnlineApiKey = config.worldWeatherOnlineApiKey;
         this.defaultCity = config.defaultCity;
         this.defaultMsg = config.defaultMsg || "I don't know the weather right now. \\pau=200\\ I'm not allowed to go outside anyways. \\pau=800\\ What else would you like to do? || I don't know the weather right now."; 
         this.followupMsg = config.followupMsg || "\\pau=600\\ What else would you like to talk about?";
