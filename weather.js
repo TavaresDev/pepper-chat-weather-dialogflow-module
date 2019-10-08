@@ -7,7 +7,7 @@ const { capitalize, toLower, isEmpty } = require('lodash');
 const moment = require('moment');
 
 // Load Javascript API requests helper libraries: request & restful.js
-const request = require('request');
+const requestApi = require('request');
 const restful = require('restful.js');
 const { requestBackend } = restful;
 
@@ -29,7 +29,7 @@ class WeatherPepperChat {
         this.followupMsg = config.followupMsg || "\\pau=600\\ What else would you like to talk about?";
         this.fallbackMsg = config.fallbackMsg || "I don't know the weather right now, but I always think {city} is a charming place. ";
         this.fallbackMsgBuilder = replace(/\{city\}/g, R.__, `${this.fallbackMsg} ${this.followupMsg} || ${this.fallbackMsg}`);
-        this.weatherApi = restful.default('http://api.worldweatheronline.com', requestBackend(request));  
+        this.weatherApi = restful.default('http://api.worldweatheronline.com', requestBackend(requestApi));  
     }
     actionHandler( { body }, response, agent) {
         let { session } = body;
