@@ -46,6 +46,10 @@ class WeatherPepperChat {
         let weather_fallback_msg = this.fallbackMsgBuilder(city);
         const weatherRequestPath = `premium/v1/weather.ashx?format=json&num_of_days=1&q=${encodeURIComponent(city)}&key=${this.worldWeatherOnlineApiKey}&date=${date}`;
         this.weatherApi.custom(weatherRequestPath).get().then( api_response => {
+            console.log(weatherRequestPath)
+            console.log(this.weatherApi)
+            console.log(api_response)
+            console.log(JSON.stringify(api_response));
             let timeContext = 'present', currentConditions, weatherCode;
             if (date && moment() <= moment(date)) {
                timeContext = 'future';
@@ -55,7 +59,6 @@ class WeatherPepperChat {
                     timeContext = 'future';
                 }
             }
-            console.log(JSON.stringify(api_response));
             const response_body = api_response.body(false);
             const forecast = path(['data', 'weather', 0], response_body);
             const location = path(['data', 'request', 0], response_body);
