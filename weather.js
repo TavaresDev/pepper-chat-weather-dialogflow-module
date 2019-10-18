@@ -39,7 +39,7 @@ class WeatherPepperChat {
         /**
          * This function is specific to the data model returned by the World Weather Online 3-day forecast API. The data 
          * model features weather descriptions in increments of 3 hours, starting at midnight (AM) of the current day. */
-        let { geoCity : city, date, timePeriod, originalDate = 'today', originalTimePeriod } = parameters;
+        let { geoCity : city="", date="", timePeriod, originalDate = 'today', originalTimePeriod } = parameters;
         // Check to see if the user provided a city; otherwise check if it was set in the CMS; if no city is specified, use the default city
         city = city.length !== 0 ? city : local.city || local.CITY || this.defaultCity;
         date = date.length !== 0 ? date : new Date().toISOString().slice(0, 10);
